@@ -141,3 +141,16 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Hermes-showcase additions
+.env
+.env.*
+*.key
+*.pem
+auth.json
+state.db*
+secrets/
+.idea/
+.vscode/
+*.swp
+.DS_Store
