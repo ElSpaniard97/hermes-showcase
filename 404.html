@@ -21,10 +21,11 @@
   <meta name="description" content="The requested Hermes Showcase page was not found.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
   <script>tailwind={config:{darkMode:'class',theme:{extend:{colors:{ink:'#0a0a0b',surface:'#16161a',line:'#27272a',muted:'#a1a1aa',cyan:'#06b6d4',violet:'#a78bfa'},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}};</script>
   <script>(function(){const s=localStorage.getItem('theme');const p=matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',s?s==='dark':p)})();</script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Play CDN: cannot use SRI (dynamic content). CSP restricts script-src to this origin. Acceptable for a static portfolio site. -->
+<script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
