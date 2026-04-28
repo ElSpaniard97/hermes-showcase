@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Not in memory</title>
+  <meta name="description" content="The requested Hermes Showcase page was not found.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>tailwind={config:{darkMode:'class',theme:{extend:{colors:{ink:'#0a0a0b',surface:'#16161a',line:'#27272a',muted:'#a1a1aa',cyan:'#06b6d4',violet:'#a78bfa'},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}};</script>
+  <script>(function(){const s=localStorage.getItem('theme');const p=matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',s?s==='dark':p)})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="sticky top-0 z-50 border-b border-line bg-ink/75 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+      <a class="font-extrabold" href="index.html">⌘ Hermes</a>
+      <button data-theme-toggle class="focusable grid h-10 w-10 place-items-center rounded-full border border-line bg-surface" type="button" aria-label="Toggle theme">◐</button>
+    </div>
+  </nav>
+  <main id="main" class="grid min-h-[72vh] place-items-center px-4 py-20 text-center">
+    <section class="max-w-2xl">
+      <p class="text-sm font-bold uppercase tracking-[0.24em] text-cyan">Missing route</p>
+      <h1 class="mt-5 text-5xl font-extrabold sm:text-7xl">404 — Not in memory.</h1>
+      <p class="mt-6 text-lg leading-8 text-[color:var(--muted)]">The agent looked for this page and came back with a clean miss. Either the note was never written, or the route drifted out of context.</p>
+      <a class="btn btn-primary mt-8" href="index.html">← Take me home</a>
+    </section>
+  </main>
+  <footer class="border-t border-line px-4 py-8 text-center text-sm text-[color:var(--muted)]">Built by Ezekiel Correa · <a class="text-cyan" href="https://github.com/ElSpaniard97/hermes-showcase">View source</a></footer>
+  <script src="assets/main.js"></script>
+</body>
+</html>
