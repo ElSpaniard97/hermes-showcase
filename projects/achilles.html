@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Achilles Case Study — Hermes Showcase</title>
+  <meta name="description" content="Case study for Achilles, a Discord-resident AI assistant in Hermes Server.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>tailwind={config:{darkMode:'class',theme:{extend:{colors:{ink:'#0a0a0b',surface:'#16161a',line:'#27272a',muted:'#a1a1aa',cyan:'#06b6d4',violet:'#a78bfa'},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}}};</script>
+  <script>(function(){const s=localStorage.getItem('theme');const p=matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',s?s==='dark':p)})();</script>
+  <script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<nav class="sticky top-0 z-50 border-b border-line bg-ink/75 backdrop-blur-xl"><div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3"><a class="font-extrabold" href="../index.html">⌘ Hermes</a><div class="flex items-center gap-2"><a class="btn btn-secondary" href="../index.html#achilles">Home</a><button data-theme-toggle class="focusable grid h-10 w-10 place-items-center rounded-full border border-line bg-surface" type="button" aria-label="Toggle theme">◐</button></div></div></nav>
+<main id="main" class="px-4 py-16 sm:px-6 lg:px-8">
+  <article class="mx-auto max-w-4xl">
+    <a class="text-sm font-bold text-cyan" href="../index.html#achilles">← Back to Hermes</a>
+    <h1 class="mt-6 text-4xl font-extrabold sm:text-6xl">Achilles · Discord-resident AI assistant</h1>
+    <p class="mt-5 text-xl leading-8 text-[color:var(--muted)]">A teammate-shaped interface for generation, transcription, scheduling, and small operational tasks.</p>
+    <img class="diagram mt-10" src="../assets/diagrams/achilles-flow.svg" alt="Achilles request flow">
+
+    <section class="mt-12 space-y-5 text-lg leading-8 text-[color:var(--muted)]">
+      <h2 class="text-2xl font-bold text-[color:var(--text)]">Why Discord</h2>
+      <p>Achilles began as a practical question: what would an AI assistant look like if it lived where I already coordinate casual work? Discord is fast, searchable, familiar, and good at asynchronous progress updates. That made it a useful surface for long-running tasks such as media generation, YouTube transcription, and scheduled reminders.</p>
+      <p>The goal was not to make a novelty bot. The goal was to make an operator that could accept a request, decide whether it had enough context, call a tool through a narrow interface, and report progress in a way that made the system feel accountable. When a render is pending or a transcript is still being processed, silence is bad UX. Achilles treats status updates as part of the contract.</p>
+    </section>
+
+    <section class="mt-12 space-y-5 text-lg leading-8 text-[color:var(--muted)]">
+      <h2 class="text-2xl font-bold text-[color:var(--text)]">Operating model</h2>
+      <p>The assistant keeps platform concerns separate from task concerns. Discord provides the message, attachments, and delivery channel. Hermes normalizes that into a session. Achilles then plans the work with the same durable memory and skills system available to the rest of the platform.</p>
+      <p>I learned to keep tool access boring on purpose. A video request should not grant broad filesystem access. A transcription request should not imply arbitrary network fetches outside the intended media URL. Each capability is shaped as an explicit operation with inputs, outputs, failure states, and user-facing messages.</p>
+    </section>
+
+    <div class="code-wrap mt-10"><div class="flex items-center justify-between border-b border-line px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-muted"><span>Illustrative orchestration</span><button class="copy-btn px-3 py-2" data-copy="#code-achilles" type="button">Copy</button></div><pre><code id="code-achilles"># illustrative
+async def handle_media_request(request):
+    plan = await planner.create(request.text, tools=["video", "image", "transcript"])
+    await request.reply("Accepted. I will post progress as each step completes.")
+    for step in plan.steps:
+        result = await tools.run(step.name, step.inputs)
+        await request.reply(step.status_message(result))
+    return await request.reply("Delivered. I saved a short summary for later iteration.")</code></pre></div>
+
+    <section class="mt-12 space-y-5 text-lg leading-8 text-[color:var(--muted)]">
+      <h2 class="text-2xl font-bold text-[color:var(--text)]">Trade-offs</h2>
+      <p>The main trade-off is personality versus predictability. A memorable assistant is easier to use because it feels like a consistent collaborator, but an overly theatrical assistant can hide important uncertainty. I bias Achilles toward directness: say what is happening, what is blocked, what will happen next, and what artifact was produced.</p>
+      <p>Another trade-off is tool breadth. It is tempting to connect every capability immediately. In practice, the reliable path is to add one tool at a time, write the user-visible states, and make sure failures are graceful. Recruiter-facing polish comes from boring details: retries, short summaries, clear permission boundaries, and enough logging to debug what happened later.</p>
+      <p>The assistant also needs to know when to ask rather than act. A vague creative request can usually be improved with one clarifying question, while a low-risk draft can be produced immediately and refined after feedback. I treat that as a product decision, not a model decision. The surrounding code decides which tasks are safe to start, which require confirmation, and which should be refused because the requested action is outside the tool boundary.</p>
+      <p>That approach keeps the experience calm. Achilles can have a distinct voice without becoming unpredictable, and it can call powerful services without implying unlimited authority. The system is most impressive when it feels ordinary: a request enters, a plan appears, work progresses, and the final artifact arrives with enough context to continue.</p>
+    </section>
+
+    <section class="mt-12 space-y-5 text-lg leading-8 text-[color:var(--muted)]">
+      <h2 class="text-2xl font-bold text-[color:var(--text)]">What I learned</h2>
+      <p>Interfaces for agents are mostly operations design. The model can generate text, but the product quality comes from how requests are shaped, how progress is communicated, and how state is preserved. Achilles taught me that an agent becomes useful when it can be interrupted, observed, corrected, and asked to continue from a known baseline.</p>
+    </section>
+    <a class="btn btn-primary mt-12" href="hermes-gateway.html">Next → Hermes Gateway</a>
+  </article>
+</main><footer class="border-t border-line px-4 py-8 text-center text-sm text-[color:var(--muted)]">Built by Ezekiel Correa · <a class="text-cyan" href="https://github.com/ElSpaniard97/hermes-showcase">View source</a></footer><script src="../assets/main.js"></script></body></html>
