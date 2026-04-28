@@ -88,7 +88,7 @@ This is a public site about a system that handles personal data and credentials.
 
 ## Contact
 
-- 📧 **Email:** ezekielcorrea@gmail.com
+- 📧 **Email:** ezekielcorrea2016@gmail.com
 - 💼 **LinkedIn:** [www.linkedin.com/in/ezekiel-correa-117a50305](https://www.linkedin.com/in/ezekiel-correa-117a50305)
 - 🐙 **GitHub:** [github.com/ElSpaniard97](https://github.com/ElSpaniard97)
 - 📄 **Full résumé:** [ElSpaniard97.github.io/ezekiel-correa-resume](https://ElSpaniard97.github.io/ezekiel-correa-resume/)
