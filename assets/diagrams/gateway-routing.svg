@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-label="Gateway routing lifecycle">
+  <rect width="760" height="300" rx="20" fill="#0d0d10"/>
+  <g fill="none" stroke="#3f3f46" stroke-width="2"><path d="M135 150h120M365 150h120M505 112l70-42M505 188l70 42"/></g>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle" font-weight="700">
+    <g fill="#16161a" stroke="#27272a" stroke-width="2">
+      <rect x="45" y="110" width="120" height="80" rx="14"/><rect x="255" y="110" width="140" height="80" rx="14"/><rect x="485" y="110" width="140" height="80" rx="14"/><rect x="575" y="40" width="130" height="60" rx="14"/><rect x="575" y="200" width="130" height="60" rx="14"/>
+    </g>
+    <text x="105" y="144" fill="#fafafa">Inbound</text><text x="105" y="168" fill="#a1a1aa" font-size="13">platform event</text>
+    <text x="325" y="144" fill="#fafafa">Normalize</text><text x="325" y="168" fill="#a1a1aa" font-size="13">user + session</text>
+    <text x="555" y="144" fill="#fafafa">Agent</text><text x="555" y="168" fill="#a1a1aa" font-size="13">single persona</text>
+    <text x="640" y="76" fill="#fafafa">Discord</text><text x="640" y="236" fill="#fafafa">Telegram</text>
+  </g>
+</svg>

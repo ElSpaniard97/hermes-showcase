@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-label="Obsidian memory loop">
+  <rect width="760" height="300" rx="20" fill="#0d0d10"/>
+  <circle cx="380" cy="150" r="94" fill="#16161a" stroke="#06b6d4" stroke-width="3"/>
+  <path d="M380 56a94 94 0 0 1 84 52M474 150a94 94 0 0 1-52 84M380 244a94 94 0 0 1-84-52M286 150a94 94 0 0 1 52-84" fill="none" stroke="#a78bfa" stroke-width="5" stroke-linecap="round"/>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle" font-weight="700">
+    <text x="380" y="142" fill="#fafafa" font-size="22">Git-versioned</text><text x="380" y="171" fill="#fafafa" font-size="22">Obsidian Vault</text>
+    <text x="152" y="68" fill="#fafafa">Read context</text><text x="610" y="68" fill="#fafafa">Plan action</text><text x="612" y="252" fill="#fafafa">Write summary</text><text x="150" y="252" fill="#fafafa">Review diff</text>
+  </g>
+</svg>

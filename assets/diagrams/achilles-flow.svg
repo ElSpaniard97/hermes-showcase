@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-label="Achilles request flow">
+  <rect width="760" height="260" rx="20" fill="#0d0d10"/>
+  <g stroke="#3f3f46" stroke-width="2" fill="none"><path d="M155 130h90M330 130h90M505 130h90"/></g>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle" font-weight="700">
+    <g fill="#16161a" stroke="#27272a" stroke-width="2">
+      <rect x="45" y="90" width="130" height="80" rx="14"/><rect x="245" y="90" width="130" height="80" rx="14"/><rect x="445" y="90" width="130" height="80" rx="14"/><rect x="595" y="90" width="120" height="80" rx="14"/>
+    </g>
+    <text x="110" y="123" fill="#fafafa">Discord</text><text x="110" y="148" fill="#a1a1aa" font-size="13">prompt</text>
+    <text x="310" y="123" fill="#fafafa">Achilles</text><text x="310" y="148" fill="#a1a1aa" font-size="13">plans</text>
+    <text x="510" y="123" fill="#fafafa">Tools</text><text x="510" y="148" fill="#a1a1aa" font-size="13">execute</text>
+    <text x="655" y="123" fill="#fafafa">Reply</text><text x="655" y="148" fill="#a1a1aa" font-size="13">updates</text>
+  </g>
+</svg>

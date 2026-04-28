@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Hermes Showcase by Ezekiel Correa">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#06b6d4"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="55"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+  <circle cx="280" cy="150" r="170" fill="#06b6d4" opacity=".22" filter="url(#blur)"/>
+  <circle cx="900" cy="180" r="210" fill="#a78bfa" opacity=".18" filter="url(#blur)"/>
+  <rect x="76" y="72" width="1048" height="486" rx="28" fill="#16161a" stroke="#27272a"/>
+  <text x="120" y="155" fill="#06b6d4" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">⌘ Hermes Server</text>
+  <text x="120" y="265" fill="#fafafa" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="800">Personal AI Ops Platform</text>
+  <text x="120" y="336" fill="#a1a1aa" font-family="Inter, Arial, sans-serif" font-size="32">Message routing · autonomous workflows · persistent memory</text>
+  <text x="120" y="470" fill="#fafafa" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Built by Ezekiel Correa</text>
+  <g transform="translate(840 350)">
+    <rect x="0" y="0" width="220" height="88" rx="18" fill="#0d0d10" stroke="url(#g)" stroke-width="3"/>
+    <text x="110" y="54" text-anchor="middle" fill="#fafafa" font-family="JetBrains Mono, monospace" font-size="24">XPS 15 · Ubuntu</text>
+  </g>
+</svg>

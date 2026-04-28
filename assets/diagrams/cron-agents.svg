@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-label="Cron to autonomous agent flow">
+  <rect width="760" height="260" rx="20" fill="#0d0d10"/>
+  <g stroke="#3f3f46" stroke-width="2" fill="none"><path d="M160 130h105M380 130h105M600 130h60"/></g>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle" font-weight="700">
+    <g fill="#16161a" stroke="#27272a" stroke-width="2">
+      <rect x="55" y="88" width="130" height="84" rx="14"/><rect x="265" y="88" width="140" height="84" rx="14"/><rect x="485" y="88" width="140" height="84" rx="14"/><rect x="640" y="88" width="80" height="84" rx="14"/>
+    </g>
+    <text x="120" y="122" fill="#fafafa">Cron</text><text x="120" y="148" fill="#a1a1aa" font-size="13">schedule</text>
+    <text x="335" y="122" fill="#fafafa">Fresh agent</text><text x="335" y="148" fill="#a1a1aa" font-size="13">bounded task</text>
+    <text x="555" y="122" fill="#fafafa">QA gate</text><text x="555" y="148" fill="#a1a1aa" font-size="13">summarize</text>
+    <text x="680" y="122" fill="#fafafa">Send</text><text x="680" y="148" fill="#a1a1aa" font-size="13">brief</text>
+  </g>
+</svg>
